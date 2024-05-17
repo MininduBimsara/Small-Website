@@ -5,6 +5,16 @@
     font-family: 'Kumbh Sans',sans-serif;
 }
 
+/* content-box (default): Width and height only apply to the content area of the element. 
+Padding and border are added to the specified width and height.
+
+border-box: Width and height include the content, padding, and border of the element. 
+Padding and border widths are subtracted from the specified width and height, so the content area remains consistent.
+
+Using box-sizing: border-box; can simplify CSS layouts and make them more intuitive, 
+especially in complex designs where you need elements to maintain a specific size regardless of their padding or border. */
+
+
 /* Navigation Bar */
 
 .navbar{
@@ -33,17 +43,33 @@
     background-color: #ff8177;
     background-image: linear-gradient(to top,#ff0844 0%,#ffb199 100%);
     background-size: 100%;
-    -webkit-background-clip: text; /*-webkit-background-clip and -moz-background-clip: These properties determine how far the background of an element extends. When set to text, the background only appears where the text is, rather than behind the entire element. This creates a cool effect where the background only shows within the contours of the text.*/
+    -webkit-background-clip: text; 
     -moz-background-clip: text; 
-    -webkit-text-fill-color: transparent;/* -webkit-text-fill-color and -moz-text-fill-color: These properties specify the color of the text. When set to transparent, it makes the text itself transparent, revealing whatever background or content lies behind it.*/
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    /* However, it's worth noting that the -webkit- and -moz- prefixes are vendor prefixes, used for compatibility with different web browsers (Webkit-based browsers like Safari and Chrome, and Mozilla-based browsers like Firefox, respectively). Depending on the browser support needed, you might need to include both versions for compatibility.*/
     display: flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;  
     font-size: 2rem;
 }
+
+/*-webkit-background-clip and -moz-background-clip: 
+These properties determine how far the background of an element extends. When set to text, the background only appears where the text is, rather than behind the entire element. This creates a cool effect where the background only shows within the contours of the text.*/
+
+/* -webkit-text-fill-color and -moz-text-fill-color: 
+These properties specify the color of the text. When set to transparent, it makes the text itself transparent, revealing whatever background or content lies behind it.*/
+
+/* However, it's worth noting that the -webkit- and -moz- prefixes are vendor prefixes, used for compatibility with different web browsers (Webkit-based browsers like Safari and Chrome, and Mozilla-based browsers like Firefox, respectively). Depending on the browser support needed, you might need to include both versions for compatibility.*/
+
+/* background-image: This property is used to set one or more background images for an element. */
+/* linear-gradient(): This is a CSS function that creates a linear gradient. It allows you to specify a gradient of colors that transitions in a linear direction. */
+/* to top: This part of the function specifies the direction of the gradient. In this case, it indicates that the gradient transitions from bottom to top. 
+So, the color at the top of the element will be the final color in the gradient, and the color at the bottom will be the initial color. */
+/* #ff0844 0%: This is the starting color of the gradient. #ff0844 is a hexadecimal color value representing a shade of red, and 0% indicates that it starts at the bottom of the element. */
+/* #ffb199 100%: This is the ending color of the gradient. #ffb199 is a hexadecimal color value representing a shade of pinkish-orange, and 100% indicates that it ends at the top of the element. */
+/* So, when you apply this CSS to an element, it creates a gradient background that starts with a shade of red at the bottom and transitions smoothly to a pinkish-orange color at the top, 
+following a linear direction from bottom to top. */
 
 .fa-gem{
     margin-right: 0.5rem;
@@ -75,15 +101,15 @@
 }
 
 .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* This property specifies that the element should be displayed as a flex container, allowing for flexible layout of its child elements. */
+    align-items: center; /* This property specifies that the element should be displayed as a flex container, allowing for flexible layout of its child elements. */
+    justify-content: center; /*  This property aligns the items (child elements) along the main-axis (horizontally in this case) within the flex container. It centers them horizontally. */
     text-decoration: none;
     padding: 20px 10px;
     height: 100%;
     width: 100%;
-    border: none;
-    outline: none;
+    border: none; 
+    outline: none; /* This property removes any outline around the element. This is often used to remove the default focus outline that appears on clickable elements. */
     border-radius: 4px;
     background: #f77062;
     color: #fff;
@@ -98,6 +124,16 @@
     color: #f77062;
     transition: all 0.3s ease;
 }
+
+/* transition: This property is used to specify the transition effect to be applied when a CSS property changes its value. 
+It allows you to control the speed and timing function of the transition. */
+/* all: This keyword indicates that the transition effect should be applied to all properties that change. */
+/* 0.3s: This value specifies the duration of the transition effect. In this case, it's set to 0.3 seconds, 
+meaning that any change in CSS properties will be smoothly transitioned over a period of 0.3 seconds. */
+/* ease: This is the timing function or easing function of the transition. It describes how the transition progresses over time. 
+"ease" is one of the built-in timing functions in CSS, and it starts slowly, accelerates in the middle, and then slows down again towards the end, creating a smooth and natural transition effect. */
+/* So, when you apply this CSS to an element, any change in its CSS properties will be transitioned smoothly over a duration of 0.3 seconds using the "ease" timing function, 
+creating a pleasing visual effect. */
 
 @media screen and (max-width: 960px) {
 
@@ -124,6 +160,13 @@
         z-index: -1;
         background: #131313;
     }
+
+/* display: grid;: This property is used to define a grid container. It establishes a new grid formatting context for the children elements. Essentially, 
+it tells the browser that the element's content will be laid out using grid layout rules. */
+/* grid-template-columns: auto;: This property is used to define the number and size of the columns in the grid. In this case, it's set to "auto", 
+which means that the columns will be sized automatically based on the content within them. 
+Each column will be sized to fit its content. */
+/* Refer Positioning TXT for further Details. */
     
     .navbar_menu.active{
         background: #131313;
@@ -215,6 +258,13 @@
     width: 100%;
     max-width: 1300px
 }
+
+/* When you set grid-template-columns: 1fr 1fr;, you're creating a grid with two columns. 
+Each column will take up an equal amount of the available space in the grid container. */
+
+/* What Does 1fr Mean?
+fr: This stands for "fractional unit" and is a way to distribute available space in the grid container.
+1fr: Represents one fraction of the available space. When you have multiple fr units, the space is divided proportionally. */
 
 .main_content h1{
     font-size: 4rem;
@@ -606,6 +656,9 @@
     }
 
 }
+
+/*  */
+
 
 @media screen and (max-width:480px){
     .footer_link-items{
