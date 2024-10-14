@@ -449,7 +449,7 @@ fr: This stands for "fractional unit" and is a way to distribute available space
       rgba(0, 0, 0, 0) 0%,
       rgba(17, 17, 17, 0.6) 100%
     ),
-    url("/HTML-CSS-JS-Small-Projects/images/pic2.jpg");
+    url("/images/pic2.jpg");
   background-size: cover;
   position: relative;
   color: #fff;
@@ -465,7 +465,7 @@ fr: This stands for "fractional unit" and is a way to distribute available space
       rgba(0, 0, 0, 0) 0%,
       rgba(17, 17, 17, 0.6) 100%
     ),
-    url("/HTML-CSS-JS-Small-Projects/images/pic3.jpg");
+    url("/images/pic3.jpg");
 }
 
 .services h2 {
